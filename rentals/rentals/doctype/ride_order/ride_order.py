@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class Vehicle_data(Document):
+class RideOrder(Document):
 	pass

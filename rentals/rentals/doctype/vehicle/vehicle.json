@@ -1,27 +1,24 @@
 {
  "actions": [],
+ "allow_guest_to_view": 1,
  "allow_import": 1,
- "allow_rename": 1,
- "autoname": "1.##",
- "creation": "2025-06-05 12:57:06.620756",
+ "autoname": "format:{make}-{model}",
+ "creation": "2025-06-06 18:01:11.797281",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "title",
   "make",
   "year",
-  "column_break_odc1",
-  "model",
   "color",
-  "section_break_bd0p",
-  "my_read_only",
-  "column_break_jlsv",
-  "license_plate"
+  "column_break_nivf",
+  "model",
+  "license_plate",
+  "is_published",
+  "route",
+  "image"
  ],
  "fields": [
-  {
-   "fieldname": "section_break_bd0p",
-   "fieldtype": "Section Break"
-  },
   {
    "fieldname": "make",
    "fieldtype": "Data",
@@ -30,50 +27,74 @@
    "reqd": 1
   },
   {
-   "fieldname": "year",
-   "fieldtype": "Data",
-   "label": "Year",
-   "reqd": 1
-  },
-  {
-   "fieldname": "column_break_odc1",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "model",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Model",
    "reqd": 1
   },
   {
-   "fieldname": "color",
-   "fieldtype": "Color",
-   "label": "Color"
+   "fieldname": "year",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Year",
+   "non_negative": 1,
+   "reqd": 1
   },
   {
    "fieldname": "license_plate",
    "fieldtype": "Data",
-   "label": "License Plate"
+   "label": "License plate"
   },
   {
-   "default": "My_read_only_here",
-   "fieldname": "my_read_only",
-   "fieldtype": "Read Only",
-   "label": "My Read Only"
+   "fieldname": "color",
+   "fieldtype": "Color",
+   "in_list_view": 1,
+   "label": "Color",
+   "reqd": 1
   },
   {
-   "fieldname": "column_break_jlsv",
+   "fieldname": "column_break_nivf",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_published",
+   "fieldtype": "Check",
+   "label": "Is_Published"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
   }
  ],
  "grid_page_length": 50,
+ "has_web_view": 1,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2025-06-05 13:49:27.934645",
+ "is_published_field": "is_published",
+ "links": [
+  {
+   "link_doctype": "Driver",
+   "link_fieldname": "Vehicle_Select"
+  }
+ ],
+ "modified": "2025-06-10 12:03:23.734427",
  "modified_by": "Administrator",
  "module": "Rentals",
  "name": "Vehicle",
- "naming_rule": "Expression (old style)",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -89,8 +110,11 @@
    "write": 1
   }
  ],
+ "route": "cars",
  "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "title"
 }

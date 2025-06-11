@@ -6,4 +6,10 @@ from frappe.model.document import Document
 
 
 class Driver(Document):
-	pass
+	
+	def before_save(self):
+
+		self.full =self.first_name + " " +self.last_name
+
+	def send_alert(self):
+		print("Just sending messages")
